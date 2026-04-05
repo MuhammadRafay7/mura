@@ -1,0 +1,58 @@
+name: mura
+description: A luxury, username-based messenger.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- UI & AESTHETICS ---
+  google_fonts: ^6.3.3 # Updated for 2026 stability
+  lucide_icons: ^0.257.0
+  flutter_staggered_grid_view: ^0.7.0
+  flutter_earth_globe: ^2.2.1
+
+  # --- BACKEND & AUTH ---
+  supabase_flutter: ^2.0.2
+
+  # --- HARDWARE & SENSORS ---
+  vibration: ^3.1.8 # Updated to fix the 'Registrar' crash
+  local_auth: ^2.3.0
+
+  # --- MEDIA & INPUT ---
+  image_picker: ^1.0.7
+  path: ^1.9.0
+  record: 5.1.0 # Pinned
+  audioplayers: 5.2.1 # Pinned
+  path_provider: ^2.1.2
+
+  # --- NOTIFICATIONS & TIME ---
+  flutter_local_notifications: ^17.0.0
+  timezone: ^0.9.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Tool to generate all Android icon sizes automatically
+  flutter_launcher_icons: ^0.14.4
+
+# ADD THIS SECTION TO FIX THE RECORDING ERROR
+dependency_overrides:
+  record_platform_interface: 1.1.0
+
+# --- MURA ICON CONFIGURATION ---
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  # Optional: use a brand color for the background on newer Android versions
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: "assets/images/app_icon.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/app_icon.png
